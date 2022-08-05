@@ -1,6 +1,7 @@
 <?php
   include 'crud_read.php';
   include 'crud_delete.php';
+  include 'crud_update.php';
 ?>
 
 <!doctype html>
@@ -37,15 +38,15 @@ while ($row = $result->fetch_assoc()) {
         <td><?php echo $row['mobile']; ?></td>
         <td><?php echo $row['passwordd']; ?></td>
         <td>
-            <form action="user_details.php" method="post" >
+            <form action="" method="post" >
                <input type="hidden" name="id" value="<?=$row['id'] ?>">
-               <button class="Btn btn-action" name="delete" >Delete</button>
+               <button class="Btn btn-action bg-primary" name="delete" >Delete</button>
             </form>
         </td>
         <td>
-            <form action="user_details.php" method="get" >
+            <form action="" method="get" >
                <input type="hidden" name="id" value="<?=$row['id'] ?>">
-               <button class="Btn btn-action" name="update" >Update</button>
+               <button class="Btn btn-action bg-danger" name="update"  ><a href="updation.php?id=<?php echo $row['id']; ?>"> Update</a></button>
             </form>
         </td>
     </tr>                       

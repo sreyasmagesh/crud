@@ -1,5 +1,5 @@
 <?php
-
+include 'crud_update.php';
 if (isset($_POST['update'])) {
 	$id = $_POST['id'];
 	$name = $_POST['name'];
@@ -9,4 +9,7 @@ if (isset($_POST['update'])) {
 	$_SESSION['message'] = "Address updated!"; 
 	header('location: index.php');
 }
+
 ?>
+
+
