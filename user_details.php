@@ -1,7 +1,6 @@
 <?php
   include 'crud_read.php';
   include 'crud_delete.php';
-  include 'crud_update.php';
 ?>
 
 <!doctype html>
@@ -14,11 +13,18 @@
     <title>crud_operation</title>
   </head>
   <body>
+    <style>
+      img{
+        width:20%;
+        border-radius:50%;
+      }
+    </style>
 
 <table class="table">
 <thead>
     <tr>
         <th scope="col">id</th>
+        <th scope="col">User image</th>
         <th scope="col">name</th>
         <th scope="col">email</th>
         <th scope="col">mobile</th>
@@ -33,10 +39,12 @@ while ($row = $result->fetch_assoc()) {
 ?>
     <tr>
         <td><?php echo $row['id']; ?></td>
+        <td><?php echo "<img src = 'uploads/".$row['images']."'>"; ?></td>
         <td><?php echo $row['namee']; ?></td>
         <td><?php echo $row['email']; ?></td>
         <td><?php echo $row['mobile']; ?></td>
         <td><?php echo $row['passwordd']; ?></td>
+        
         <td>
             <form action="" method="post" >
                <input type="hidden" name="id" value="<?=$row['id'] ?>">
@@ -46,7 +54,7 @@ while ($row = $result->fetch_assoc()) {
         <td>
             <form action="" method="get" >
                <input type="hidden" name="id" value="<?=$row['id'] ?>">
-               <button class="Btn btn-action bg-danger" name="update"  ><a href="updation.php?id=<?php echo $row['id']; ?>"> Update</a></button>
+               <button class="Btn btn-action bg-danger" name="update"  ><a href="updation_form.php?id=<?php echo $row['id']; ?>"> Update</a></button>
             </form>
         </td>
     </tr>                       

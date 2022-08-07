@@ -1,18 +1,16 @@
 <?php
-  include 'connect.php';
-  include 'validation.php';
-  include 'crud_create.php';
-?>
-
-<!doctype html>
+ include 'validation.php';
+ include 'connect.php';
+ include 'update.php';
+ ?>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>crud_operation</title>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   
 
-  <style>
+    <style>
     body{
       background-color:white;
     }
@@ -58,29 +56,38 @@
     }
   </style>
 
-  </head>
-  <body>
+
+</head>
+<body>
+
+
     
-      <center>
+    <hr>
+    <center>
       <form action="" method="post" enctype="multipart/form-data">
          <div class="main">
             <div class="heading">
-              <h1>SIGNUP</h1>
+              <h1>UPDATE</h1>
             </div><br>
+            <div class="first">
+             <input size="35" name="id" type="hidden" placeholder="Name" value="<?php echo $id; ?>"><br>
+             <span><?php echo $nameErr; ?></span>
+           </div><br>
+             
            <div class="first">
-             <input size="35" name="name" type="text" placeholder="Name"><br>
+             <input size="35" name="name" type="text" placeholder="Name" value="<?php echo $name; ?>"><br>
              <span><?php echo $nameErr; ?></span>
            </div><br>
            <div class="second">
-             <input size="35" name="mobile" type="text" placeholder="Mobile"><br>
+             <input size="35" name="mobile" type="text" placeholder="Mobile" value="<?php echo $mobile; ?>"><br>
              <span><?php echo $mobileErr;?></span>
            </div><br>
            <div class="fourth">
-             <input size="35" name="email" type="email" placeholder="Email"><br>
+             <input size="35" name="email" type="email" placeholder="Email" value="<?php echo $email; ?>"><br>
              <span><?php echo $emailErr;?></span>
            </div><br>
            <div class="fifth">
-             <input size="35" name="password" type="password" placeholder="Password"><br>
+             <input size="35" name="password" type="text" placeholder="Password" value="<?php echo $password; ?>"><br>
              <span><?php echo $passwordErr;?></span>
            </div><br>
            <div class="sixth">
@@ -93,13 +100,15 @@
              <span><?php echo $fileErr;?></span>
            </div><br>
            
-             <button name="submit">SUBMIT</button>
+             <button name="update">UPDATE DETAILS</button>
            
            
           </div>
       </form>
-  </center>      
+  </center>
+      
+    </div>
 
-   
- </body>
+
+</body>
 </html>
